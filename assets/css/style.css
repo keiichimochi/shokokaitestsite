@@ -1,19 +1,19 @@
 /* Base */
 :root {
-  /* Base (from palette) */
-  --bg: #f1f2f2;      /* palette white */
-  --card: #f7f8f9;    /* slightly brighter for neumorphism */
-  --text: #2a2f38;
-  --muted: #6b7280;
-  /* Palette accents */
-  --accent-sky: #c8d8e1;  /* pale blue */
-  --accent-blue: #89bdd3; /* main blue */
-  --accent-green: #c6d3d0;/* sage/green-gray */
+  /* Blue palette (image): #7790ed, #262e37, #f5f1e5, #5b6ced */
+  --bg: #f5f1e5;        /* warm off-white */
+  --card: #faf6ee;      /* slightly brighter for soft depth */
+  --text: #262e37;      /* deep navy */
+  --muted: #5f6772;     /* desaturated navy for secondary text */
+  /* Accents */
+  --accent-sky: #7790ed; /* light blue */
+  --accent-blue: #5b6ced; /* vivid blue */
+  --accent-green: #c9c7bf; /* neutral accent substitute for third tone */
   --accent: var(--accent-blue);
-  --brand-grad: linear-gradient(90deg, var(--accent-sky), var(--accent-blue) 50%, var(--accent-green));
+  --brand-grad: linear-gradient(90deg, var(--accent-sky), var(--accent-blue) 60%, var(--bg));
   --radius: 16px;
-  --shadow-light: rgba(255, 255, 255, 0.9);
-  --shadow-dark: rgba(163, 177, 198, 0.6);
+  --shadow-light: rgba(255, 255, 255, 0.95);
+  --shadow-dark: rgba(38, 46, 55, 0.08);
 }
 
 * { box-sizing: border-box; }
@@ -105,10 +105,10 @@ body {
   box-shadow: 6px 6px 12px var(--shadow-dark), -6px -6px 12px var(--shadow-light);
 }
 .btn:hover { filter: brightness(0.98); }
-.btn.primary { color: #fff; background: linear-gradient(145deg, color-mix(in oklab, var(--accent-blue), #fff 10%), var(--accent-blue)); box-shadow: none; }
+.btn.primary { color: #fff; background: linear-gradient(145deg, color-mix(in oklab, var(--accent-blue), #fff 6%), var(--accent-blue)); box-shadow: none; }
 /* Color variants based on brand accents */
-.btn.primary-blue { color: #fff; background: linear-gradient(145deg, color-mix(in oklab, var(--accent-blue), #fff 10%), var(--accent-blue)); }
-.btn.primary-green { color: #fff; background: linear-gradient(145deg, color-mix(in oklab, var(--accent-green), #fff 10%), var(--accent-green)); }
+.btn.primary-blue { color: #fff; background: linear-gradient(145deg, color-mix(in oklab, var(--accent-sky), #fff 10%), var(--accent-sky)); }
+.btn.primary-green { color: #262e37; background: linear-gradient(145deg, color-mix(in oklab, var(--bg), var(--accent-green) 30%), var(--accent-green)); }
 .field {
   display: grid; gap: 6px;
 }
@@ -136,7 +136,7 @@ tbody tr + tr { border-top: 8px solid var(--bg); }
 .card-list { display: grid; gap: 12px; }
 .card { background: var(--card); border-radius: var(--radius); padding: 14px; box-shadow: 8px 8px 16px var(--shadow-dark), -8px -8px 16px var(--shadow-light); }
 .card h3 { margin: 0 0 4px; font-size: 16px; }
-.tag { display: inline-block; padding: 4px 8px; border-radius: 999px; background: color-mix(in oklab, var(--accent-sky), #fff 75%); color: color-mix(in oklab, var(--accent-blue), #000 60%); font-size: 12px; }
+.tag { display: inline-block; padding: 4px 8px; border-radius: 999px; background: color-mix(in oklab, var(--accent-sky), #fff 70%); color: color-mix(in oklab, var(--accent-blue), #000 55%); font-size: 12px; }
 
 /* Links use blue accent by default */
 a { color: var(--accent); }

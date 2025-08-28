@@ -4,7 +4,12 @@
   --card: #eef3f9;
   --text: #2a2f38;
   --muted: #6b7280;
-  --accent: #1e88e5;
+  /* Brand accents: Asahi sea blue, melon green, tomato red */
+  --accent-blue: #1e88e5;   /* sea */
+  --accent-green: #5ecb73;  /* melon */
+  --accent-red: #e5483a;    /* tomato */
+  --accent: var(--accent-blue);
+  --brand-grad: linear-gradient(90deg, var(--accent-blue), var(--accent-green) 50%, var(--accent-red));
   --radius: 16px;
   --shadow-light: rgba(255, 255, 255, 0.9);
   --shadow-dark: rgba(163, 177, 198, 0.7);
@@ -24,6 +29,16 @@ body {
 .site-header, .site-footer {
   text-align: center;
   padding: 20px 16px;
+}
+.site-header { position: relative; }
+.site-header::after {
+  content: "";
+  position: absolute;
+  left: 50%; transform: translateX(-50%);
+  bottom: 0; height: 4px; width: min(640px, 90%);
+  background: var(--brand-grad);
+  border-radius: 999px;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.04), 0 2px 6px rgba(0,0,0,0.06);
 }
 .site-header h1 {
   margin: 0 0 6px;
@@ -90,6 +105,10 @@ body {
 }
 .btn:hover { filter: brightness(0.98); }
 .btn.primary { color: white; background: linear-gradient(145deg, #2b93f0, #1976d2); box-shadow: none; }
+/* Color variants based on brand accents */
+.btn.primary-blue { color: #fff; background: linear-gradient(145deg, color-mix(in oklab, var(--accent-blue), #fff 10%), var(--accent-blue)); }
+.btn.primary-green { color: #fff; background: linear-gradient(145deg, color-mix(in oklab, var(--accent-green), #fff 10%), var(--accent-green)); }
+.btn.primary-red { color: #fff; background: linear-gradient(145deg, color-mix(in oklab, var(--accent-red), #fff 10%), var(--accent-red)); }
 .field {
   display: grid; gap: 6px;
 }
@@ -119,7 +138,9 @@ tbody tr + tr { border-top: 8px solid var(--bg); }
 .card h3 { margin: 0 0 4px; font-size: 16px; }
 .tag { display: inline-block; padding: 4px 8px; border-radius: 999px; background: #dde7f3; color: #2b5278; font-size: 12px; }
 
+/* Links use blue accent by default */
+a { color: var(--accent); }
+
 /* Responsive embeds */
 .embed { position: relative; width: 100%; padding-top: 56.25%; border-radius: 16px; overflow: hidden; }
 .embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-

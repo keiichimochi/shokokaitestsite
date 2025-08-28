@@ -17,6 +17,16 @@
 
 トップページ（`index.html`）から各ページに遷移できます。`assets/css/style.css` にニューモフィズムのスタイルを定義しています。
 
+### 多言語（i18n）
+- 言語切替: ヘッダー（トップ）または 設定ページ から JA/EN/ZH を切替
+- 辞書: `assets/i18n/ja.json`, `assets/i18n/en.json`, `assets/i18n/zh.json`
+- 適用: HTML要素に `data-i18n="キー"` を付与（未指定テキストはそのまま表示）
+
+### 実データ差し替え（JSON）
+- 企業マップ: `assets/data/companies.json` を編集（`pages/map.html` がロード）
+- イベント: `assets/data/events.json` を編集（`pages/events.html` がロード）
+- スキーマ: `assets/data/README.md` 参照
+
 ## GitHub Pages 公開手順
 
 1. GitHub の当リポジトリを開く
@@ -25,6 +35,11 @@
    - Source: 「Deploy from a branch」
    - Branch: 「main」およびフォルダ「/root」
 4. Save。数分後に `https://<ユーザー名>.github.io/<リポジトリ名>/` で公開されます。
+
+公開後の言語固定リンク例:
+- 日本語: `...?lang=ja`
+- English: `...?lang=en`
+- 中文: `...?lang=zh`
 
 備考:
 - 外部ライブラリは使用していないためビルド不要です（静的HTML）。
@@ -37,4 +52,3 @@
 ## ライセンス / 注意
 
 本サイトはモック（試作）であり、コンテンツ・文言・外部リンクはダミーです。実運用時は実データ・最新情報に差し替えてください。
-

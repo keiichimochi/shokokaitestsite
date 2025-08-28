@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title data-i18n="pages.map.h2">⑦ 地元企業MAP・商品紹介</title>
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <body>
+    <div class="page-header">
+      <a class="back" href="../index.html" data-i18n="common.back">← ホームに戻る</a>
+      <h2 data-i18n="pages.map.h2">⑦ 地元企業MAP・商品紹介</h2>
+      <p class="muted" data-i18n="pages.map.sub">会員企業を地図とジャンルで紹介（モック）</p>
+    </div>
+
+    <main class="container stack">
+      <section class="neumorph pad">
+        <div class="embed">
+          <!-- OSM embed around Asahi City (rough center) -->
+          <iframe title="旭市マップ" src="https://www.openstreetmap.org/export/embed.html?bbox=140.56%2C35.64%2C140.73%2C35.78&layer=mapnik&marker=35.716%2C140.649"></iframe>
+        </div>
+      </section>
+
+      <section class="card-list" id="companies-list"></section>
+    </main>
+    <footer class="site-footer"><small>モック表示</small></footer>
+    <script src="../assets/js/i18n.js"></script>
+    <script>
+      async function loadCompanies(){
+        const res = await fetch('../assets/data/companies.json', { cache: 'no-cache' });
+        const companies = await res.json();
+        const list = document.getElementById('companies-list');
+        list.innerHTML = '';
+        companies.forEach(c => {
+          const el = document.createElement('article');
+          el.className = 'card';
+          el.innerHTML = `
+            <h3>${c.name}</h3>
+            <p class="muted">ジャンル：${c.genre}｜営業時間：${c.hours || '—'}</p>
+            <p>${c.summary || ''}</p>
+            ${c.url ? `<a class="btn" href="${c.url}" target="_blank" rel="noopener">詳細</a>` : ''}
+          `;
+          list.appendChild(el);
+        });
+      }
+      document.addEventListener('DOMContentLoaded', loadCompanies);
+    </script>
+    <script src="../assets/js/main.js"></script>
+  </body>
+  </html>

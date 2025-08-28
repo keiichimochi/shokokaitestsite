@@ -1,0 +1,40 @@
+{
+  "site": {
+    "title": "Asahi Chamber Rich Menu (Mock)",
+    "subtitle": "Asahi City Chamber of Commerce – Mock UI"
+  },
+  "menu": {
+    "news": { "title": "1. Member News", "desc": "Subsidies, tax, deadlines" },
+    "events": { "title": "2. Events & Seminars", "desc": "Guides and sign-ups" },
+    "chat": { "title": "3. Chat & Contact", "desc": "Bot answers + inquiry" },
+    "survey": { "title": "4. Surveys", "desc": "Satisfaction & needs" },
+    "mypage": { "title": "5. Member Card & My Page", "desc": "Digital card & updates" },
+    "grants": { "title": "6. Business Support & Grants", "desc": "National/Pref/City programs" },
+    "map": { "title": "7. Local Business Map", "desc": "Members in Asahi" },
+    "coupons": { "title": "8. Coupons & Benefits", "desc": "Member store perks" },
+    "emergency": { "title": "9. Emergency & Disaster", "desc": "Typhoon/Earthquake info" },
+    "settings": { "title": "10. Settings & Help", "desc": "Notifications & policy" }
+  },
+  "common": {
+    "back": "← Back to Home",
+    "mock": "Mock view",
+    "apply": "Apply",
+    "details": "Details",
+    "submit": "Submit",
+    "call": "Call (mock)",
+    "mail": "Mail form (mock)"
+  },
+  "pages": {
+    "news": { "h2": "1. Member News", "sub": "Updates on subsidies, tax changes and deadlines (mock)" },
+    "events": { "h2": "2. Events & Seminars", "sub": "Guides and sign-ups (mock)" },
+    "chat": { "h2": "3. Chat & Contact (mock)", "sub": "FAQ bot answers + inquiry form" },
+    "survey": { "h2": "4. Surveys & Feedback", "sub": "Satisfaction/needs/event surveys (mock)" },
+    "mypage": { "h2": "5. Member Card & My Page (mock)", "sub": "Info updates, dues status, check-in" },
+    "grants": { "h2": "6. Business Support & Grants", "sub": "Programs by national/pref/city (mock)" },
+    "map": { "h2": "7. Local Business Map & Products", "sub": "Show members on map and by genre (mock)" },
+    "coupons": { "h2": "8. Coupons & Benefits", "sub": "Perks and discounts at member stores (mock)" },
+    "emergency": { "h2": "9. Emergency & Disaster Support", "sub": "Emergency notices and programs for affected businesses (mock)" },
+    "settings": { "h2": "10. Settings & Help", "sub": "Notifications, languages, policy and feedback (mock)" }
+  }
+}
+

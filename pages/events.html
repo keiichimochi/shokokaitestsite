@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title data-i18n="pages.events.h2">② イベント・セミナー</title>
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <body>
+    <div class="page-header">
+      <a class="back" href="../index.html" data-i18n="common.back">← ホームに戻る</a>
+      <h2 data-i18n="pages.events.h2">② イベント・セミナー</h2>
+      <p class="muted" data-i18n="pages.events.sub">勉強会・交流会の案内と申込（モック）</p>
+    </div>
+
+    <main class="container stack">
+      <section class="card-list" id="events-list"></section>
+    </main>
+    <footer class="site-footer"><small data-i18n="common.mock">モック表示</small></footer>
+    <script src="../assets/js/i18n.js"></script>
+    <script>
+      async function loadEvents(){
+        const res = await fetch('../assets/data/events.json', { cache: 'no-cache' });
+        const events = await res.json();
+        const list = document.getElementById('events-list');
+        list.innerHTML = '';
+        events.forEach(ev => {
+          const el = document.createElement('article');
+          el.className = 'card';
+          el.innerHTML = `
+            <h3>${ev.title}</h3>
+            <p class="muted">開催：${ev.datetime}｜会場：${ev.venue}</p>
+            <p>${ev.summary || ''}</p>
+            <div class="row">
+              ${ev.detail ? `<a class=\"btn\" href=\"${ev.detail}\" target=\"_blank\">詳細</a>` : ''}
+              ${ev.apply ? `<a class=\"btn primary\" href=\"${ev.apply}\" target=\"_blank\">参加申込（モック）</a>` : ''}
+            </div>`;
+          list.appendChild(el);
+        });
+      }
+      document.addEventListener('DOMContentLoaded', loadEvents);
+    </script>
+    <script src="../assets/js/main.js"></script>
+  </body>
+  </html>

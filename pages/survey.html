@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title data-i18n="pages.survey.h2">④ アンケート・フィードバック</title>
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <body>
+    <div class="page-header">
+      <a class="back" href="../index.html" data-i18n="common.back">← ホームに戻る</a>
+      <h2 data-i18n="pages.survey.h2">④ アンケート・フィードバック</h2>
+      <p class="muted" data-i18n="pages.survey.sub">満足度・ニーズ・イベント後アンケート（モック）</p>
+    </div>
+
+    <main class="container stack">
+      <form class="neumorph pad stack" onsubmit="event.preventDefault(); alert('送信（モック）ありがとうございました');">
+        <div class="field">
+          <label>事業形態</label>
+          <select required>
+            <option value="">選択してください</option>
+            <option>小売</option>
+            <option>飲食</option>
+            <option>製造</option>
+            <option>サービス</option>
+            <option>その他</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>従業員規模</label>
+          <select required>
+            <option value="">選択してください</option>
+            <option>1-5名</option>
+            <option>6-20名</option>
+            <option>21-50名</option>
+            <option>51名以上</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>関心分野（複数選択可）</label>
+          <div class="row">
+            <label class="tag"><input type="checkbox"> 補助金</label>
+            <label class="tag"><input type="checkbox"> DX・デジタル化</label>
+            <label class="tag"><input type="checkbox"> 人材・雇用</label>
+            <label class="tag"><input type="checkbox"> 観光・物産</label>
+          </div>
+        </div>
+        <div class="field">
+          <label>ご意見・ご要望</label>
+          <textarea rows="4" placeholder="旭市や商工会へのご提案・ご要望…"></textarea>
+        </div>
+        <div class="row">
+          <button class="btn primary" type="submit">送信（モック）</button>
+          <span class="muted">回答者にクーポン付与等の実装例</span>
+        </div>
+      </form>
+    </main>
+    <footer class="site-footer"><small data-i18n="common.mock">モック表示</small></footer>
+    <script src="../assets/js/i18n.js"></script>
+    <script src="../assets/js/main.js"></script>
+  </body>
+  </html>
